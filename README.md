@@ -16,6 +16,8 @@ Steps:
         - You can view your created home via `http -a superuser:password http://127.0.0.1:8000/homes/{HOME ID}/`
     - Please note the superuser and password fields from from using `python manage.py createsuperuser` on the command line and utilizing the username and password you give there. That user can also be used to log into the Browsable API. I just had an existing super user/admin in the project with a username of `superuser` and a password of `password`. This isn't how you'd normally do user log in but it allows this API to get up and running quickly. You can add and manipulate more users via the django admin field at `localhost:8000/admin/`
 
+Note: Needed packages are Django Rest Framework, Factory_Boy, and Local Flavor. You can install these in your python shell resptively with `pip install djangorestframework`, `pip install factory_boy`, `pip install django-localflavor`
+
 ### Thought Process/Assumptions
 Based on the assumption that we want to save home-owner answers about potential septic tanks. I have decided that 
 I want to do an API that interacts with an existing home model. A home should belong to a user who will provide information about it. A user might initially provide the home address but later provide more information (like answering questions about their septic tank). For security reasons only admin/superuser level accounts and users who own a home should be able to access or change information about a home. 
